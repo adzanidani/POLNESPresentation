@@ -1604,6 +1604,376 @@
       transform: scale(1.1);
     }
 
+    /* =========================================
+       SLIDES 11, 12, 13: WHERE TO FIND YOUR NEXT JOB (PORTALS)
+       ========================================= */
+    .slide-job-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 46px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .slide-job-header {
+      margin-bottom: 18px;
+    }
+
+    .slide-job-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .slide-job-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .portal-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .portal-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .portal-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 9px 13px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .portal-card:hover {
+      background: rgba(255, 107, 0, 0.06);
+      border-color: rgba(255, 107, 0, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .portal-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .portal-name {
+      font-family: var(--font-display);
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .portal-name .badge-gov {
+      font-size: 0.68rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(255, 107, 0, 0.18);
+      color: var(--accent-orange-bright);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .portal-link-icon {
+      color: var(--accent-orange);
+      opacity: 0.7;
+      transition: var(--transition);
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portal-card:hover .portal-link-icon {
+      opacity: 1;
+      transform: translate(2px, -2px);
+    }
+
+    .portal-desc {
+      font-size: 0.81rem;
+      color: #b3bac8;
+      line-height: 1.38;
+    }
+
+    .portal-url {
+      font-size: 0.74rem;
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      color: var(--accent-orange-bright);
+      opacity: 0.85;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      word-break: break-all;
+    }
+
+    .region-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      margin-top: 6px;
+    }
+
+    .region-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .portal-pro-tip {
+      margin-top: 14px;
+      background: rgba(255, 107, 0, 0.06);
+      border: 1px solid rgba(255, 107, 0, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .portal-pro-tip .tip-label {
+      background: var(--accent-orange);
+      color: #000;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .portal-pro-tip .tip-text {
+      font-size: 0.82rem;
+      color: #dbe0eb;
+      line-height: 1.45;
+    }
+
+    /* =========================================
+       SLIDE 14: DIRECT COMPANY CAREER PAGES
+       ========================================= */
+    .company-sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .sector-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      transition: var(--transition);
+    }
+
+    .sector-card:hover {
+      background: rgba(255, 107, 0, 0.05);
+      border-color: rgba(255, 107, 0, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .sector-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 8px;
+    }
+
+    .sector-icon {
+      font-size: 1.25rem;
+      margin-bottom: 3px;
+    }
+
+    .sector-name {
+      font-family: var(--font-display);
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .sector-company-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .sector-company-item {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .sector-company-item::before {
+      content: '•';
+      color: var(--accent-orange);
+      font-weight: bold;
+    }
+
+    .sector-company-item:hover {
+      background: rgba(255, 107, 0, 0.12);
+      color: #ffffff;
+      border-color: rgba(255, 107, 0, 0.3);
+    }
+
+    /* =========================================
+       SLIDE 15: MY JOB-HUNTING STRATEGY
+       ========================================= */
+    .strategy-layout {
+      display: grid;
+      grid-template-columns: 1.28fr 0.95fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .strategy-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .strategy-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      transition: var(--transition);
+    }
+
+    .strategy-step-item:hover {
+      background: rgba(255, 107, 0, 0.06);
+      border-color: rgba(255, 107, 0, 0.35);
+      transform: translateX(4px);
+    }
+
+    .step-number-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      color: #000;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(255, 107, 0, 0.4);
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .step-text strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .strategy-remember-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .remember-card {
+      background: linear-gradient(145deg, rgba(255, 107, 0, 0.09) 0%, rgba(20, 20, 24, 0.95) 100%);
+      border: 1px solid rgba(255, 107, 0, 0.45);
+      border-radius: var(--radius-md);
+      padding: 30px 32px;
+      position: relative;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 107, 0, 0.14);
+    }
+
+    .remember-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-orange);
+      color: #000;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .remember-quote-text {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: #ffffff;
+      font-weight: 500;
+      font-style: italic;
+      position: relative;
+    }
+
+    .remember-quote-text::before {
+      content: '“';
+      font-size: 3.2rem;
+      line-height: 1;
+      position: absolute;
+      top: -18px;
+      left: -20px;
+      color: rgba(255, 107, 0, 0.25);
+      font-family: Georgia, serif;
+      pointer-events: none;
+    }
+
     /* Deck Footer */
     footer.deck-footer {
       position: relative;
@@ -1782,10 +2152,19 @@
       #slide-2.slide { max-width: 100%; }
       .slide-2-pure-container { padding: 15px 24px; gap: 20px; }
       .narrative-pure-p { font-size: 1.05rem; line-height: 1.65; }
-      .slide-3-container, .slide-5-container, .slide-6-container, .slide-7-container, .slide-8-container, .slide-9-container, .slide-10-container {
-        padding: 22px 34px;
+      .slide-3-container, .slide-5-container, .slide-6-container, .slide-7-container, .slide-8-container, .slide-9-container, .slide-10-container, .slide-job-container {
+        padding: 18px 30px;
       }
-      .slide-3-title, .imake-titles h2, .f1-title-group h2, .career-heading { font-size: 1.55rem; }
+      .slide-3-title, .imake-titles h2, .f1-title-group h2, .career-heading, .slide-job-title { font-size: 1.45rem; }
+      .portal-card { padding: 6px 10px; }
+      .portal-desc { font-size: 0.75rem; }
+      .company-sectors-grid { gap: 8px; }
+      .sector-card { padding: 9px 8px; gap: 6px; }
+      .sector-company-item { font-size: 0.74rem; padding: 2px 5px; }
+      .strategy-step-item { padding: 6px 10px; }
+      .step-text { font-size: 0.8rem; }
+      .remember-card { padding: 18px 22px; }
+      .remember-quote-text { font-size: 1rem; }
       .stat-number { font-size: 1.45rem; }
       .responsibilities-list li { font-size: 0.82rem; }
       .video-player-wrapper { height: 210px; }
@@ -1815,7 +2194,7 @@
 
     <div class="header-actions">
       <div class="slide-counter">
-        <span class="current-idx" id="slideNumber">01</span> <span style="opacity:0.4;">/</span> <span id="totalSlides">10</span>
+        <span class="current-idx" id="slideNumber">01</span> <span style="opacity:0.4;">/</span> <span id="totalSlides">15</span>
       </div>
 
       <!-- Fullscreen Toggle Button (Triggers Native Fullscreen / F11) -->
@@ -2667,6 +3046,469 @@
       </div>
     </section>
 
+    <!-- ========================================================
+         SLIDE 11: WHERE TO FIND YOUR NEXT JOB? — INDONESIA 🇮🇩
+         ======================================================== -->
+    <section class="slide" id="slide-11" data-index="11">
+      <div class="slide-job-container">
+        
+        <div class="slide-job-header">
+          <div class="badge-accent">Career Portals & Platforms</div>
+          <h2 class="slide-job-title">
+            Where to Find Your Next Job? <span style="color: var(--accent-orange-bright);">Indonesia 🇮🇩</span>
+          </h2>
+          <p class="slide-job-subtitle">
+            There are many platforms you can use to explore career opportunities, both locally and across nationwide industries.
+          </p>
+        </div>
+
+        <div class="portal-grid-2col">
+          <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">LinkedIn Indonesia</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Primary platform for corporate hiring, MNCs, recruiters, and professional networking.</div>
+            <div class="portal-url">linkedin.com/jobs/</div>
+          </a>
+
+          <a href="https://www.jobstreet.co.id/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">JobStreet Indonesia</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Indonesia's largest traditional job marketplace across engineering, manufacturing, and commerce.</div>
+            <div class="portal-url">jobstreet.co.id/</div>
+          </a>
+
+          <a href="https://glints.com/id" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Glints</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">High-demand tech startups, junior to mid engineering roles, and regional remote positions.</div>
+            <div class="portal-url">glints.com/id</div>
+          </a>
+
+          <a href="https://www.kalibrr.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Kalibrr</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Curated corporate talent matching used by top tier tech unicorns and banking conglomerates.</div>
+            <div class="portal-url">kalibrr.com/</div>
+          </a>
+
+          <a href="https://dealls.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Dealls</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Top talent job platform with direct recruiter applications, referral networks, and mentoring.</div>
+            <div class="portal-url">dealls.com/</div>
+          </a>
+
+          <a href="https://id.indeed.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Indeed Indonesia</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Aggregated engine scanning company websites and job listings for broad local opportunities.</div>
+            <div class="portal-url">id.indeed.com/</div>
+          </a>
+
+          <a href="https://www.karir.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Karir.com</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Established national portal with integrated salary guides, psychometric tools, and enterprise jobs.</div>
+            <div class="portal-url">karir.com/</div>
+          </a>
+
+          <a href="https://karirhub.kemnaker.go.id/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Karirhub Kemnaker <span class="badge-gov">Official</span></div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Official Ministry of Manpower (Kementerian Ketenagakerjaan) national employment service.</div>
+            <div class="portal-url">karirhub.kemnaker.go.id/</div>
+          </a>
+
+          <a href="https://fhcibumn.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">FHCI BUMN <span class="badge-gov">BUMN Portal</span></div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Rekrutmen Bersama BUMN: Official centralized portal for Indonesia's State-Owned Enterprises.</div>
+            <div class="portal-url">fhcibumn.com/</div>
+          </a>
+
+          <a href="https://sscasn.bkn.go.id/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">SSCASN BKN <span class="badge-gov">Civil Service</span></div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Official national portal for Indonesian Government Civil Service examinations (CPNS & PPPK).</div>
+            <div class="portal-url">sscasn.bkn.go.id/</div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 12: WHERE TO FIND YOUR NEXT JOB? — MIDDLE EAST 🌍
+         ======================================================== -->
+    <section class="slide" id="slide-12" data-index="12">
+      <div class="slide-job-container">
+        
+        <div class="slide-job-header">
+          <div class="badge-accent">Global Talent & Expat Hub</div>
+          <h2 class="slide-job-title">
+            Where to Find Your Next Job? <span style="color: var(--accent-orange-bright);">Middle East / Gulf Countries 🌍</span>
+          </h2>
+          <div class="region-chips">
+            <span class="region-chip">🇦🇪 UAE</span>
+            <span class="region-chip">🇸🇦 Saudi Arabia</span>
+            <span class="region-chip">🇶🇦 Qatar</span>
+            <span class="region-chip">🇴🇲 Oman</span>
+            <span class="region-chip">🇧🇭 Bahrain</span>
+            <span class="region-chip">🇰🇼 Kuwait</span>
+          </div>
+          <p class="slide-job-subtitle">
+            The GCC region is a premier destination for high-paying engineering careers, megaprojects, and international mobility.
+          </p>
+        </div>
+
+        <div class="portal-grid-3col">
+          <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">LinkedIn Middle East</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">The dominant platform for multinational, GCC corporate, and engineering talent searches.</div>
+            <div class="portal-url">linkedin.com/jobs/</div>
+          </a>
+
+          <a href="https://www.naukrigulf.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Naukrigulf</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">The Gulf's fastest-growing recruitment portal with direct recruiter messaging and CV search.</div>
+            <div class="portal-url">naukrigulf.com/</div>
+          </a>
+
+          <a href="https://www.bayt.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Bayt</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">The largest indigenous Middle Eastern job portal connecting over 40M+ professionals to regional employers.</div>
+            <div class="portal-url">bayt.com/</div>
+          </a>
+
+          <a href="https://www.gulftalent.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">GulfTalent</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Top recruitment portal specifically for professional, technical, and engineering specialist roles.</div>
+            <div class="portal-url">gulftalent.com/</div>
+          </a>
+
+          <a href="https://ae.indeed.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Indeed UAE & Gulf</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Comprehensive job aggregator across Dubai, Abu Dhabi, Doha, Riyadh, and GCC hubs.</div>
+            <div class="portal-url">ae.indeed.com/</div>
+          </a>
+
+          <a href="https://www.founditgulf.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Foundit Gulf</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Formerly Monster Gulf, offering massive tech, oil & gas, and industrial hiring opportunities.</div>
+            <div class="portal-url">founditgulf.com/</div>
+          </a>
+        </div>
+
+        <div class="portal-pro-tip">
+          <div class="tip-label">Strategic Tip</div>
+          <div class="tip-text">
+            GCC recruiters rely heavily on <strong>LinkedIn</strong> and <strong>Naukrigulf</strong>. Ensure your profile lists relevant international standards (IEC, IEEE, ISO), project experience, and multilingual capability (English & regional fluency).
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 13: WHERE TO FIND YOUR NEXT JOB? — INTERNATIONAL 🌎
+         ======================================================== -->
+    <section class="slide" id="slide-13" data-index="13">
+      <div class="slide-job-container">
+        
+        <div class="slide-job-header">
+          <div class="badge-accent">Global Career Mobility</div>
+          <h2 class="slide-job-title">
+            Where to Find Your Next Job? <span style="color: var(--accent-orange-bright);">International / Worldwide 🌎</span>
+          </h2>
+          <p class="slide-job-subtitle">
+            Expand your horizon worldwide. These platforms connect you with international employers, European relocation programs, remote work, and startup ecosystems.
+          </p>
+        </div>
+
+        <div class="portal-grid-3col">
+          <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">LinkedIn Worldwide</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">The undeniable global standard for international careers, remote contracts, and global relocations.</div>
+            <div class="portal-url">linkedin.com/jobs/</div>
+          </a>
+
+          <a href="https://www.indeed.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Indeed Global</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">The world's largest job search engine across 60+ countries and 28 languages.</div>
+            <div class="portal-url">indeed.com/</div>
+          </a>
+
+          <a href="https://www.glassdoor.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Glassdoor</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Jobs paired with real employee reviews, salary transparency, and interview question databases.</div>
+            <div class="portal-url">glassdoor.com/</div>
+          </a>
+
+          <a href="https://eures.europa.eu/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">EURES <span class="badge-gov">European Union</span></div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Official European Commission portal facilitating cross-border employment throughout the EU & EEA.</div>
+            <div class="portal-url">eures.europa.eu/</div>
+          </a>
+
+          <a href="https://www.eurojobs.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">EuroJobs</div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Pan-European job board connecting international English-speaking talent to European enterprises.</div>
+            <div class="portal-url">eurojobs.com/</div>
+          </a>
+
+          <a href="https://wellfound.com/" target="_blank" rel="noopener noreferrer" class="portal-card">
+            <div class="portal-card-header">
+              <div class="portal-name">Wellfound <span class="badge-gov">Startup & AI</span></div>
+              <span class="portal-link-icon"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></span>
+            </div>
+            <div class="portal-desc">Formerly AngelList Talent: The premier platform for high-growth tech startups, AI teams, and equity roles.</div>
+            <div class="portal-url">wellfound.com/</div>
+          </a>
+        </div>
+
+        <!-- 7th Portal (Tech in Asia) featured banner -->
+        <div style="margin-top: 12px;">
+          <a href="https://www.techinasia.com/jobs/" target="_blank" rel="noopener noreferrer" class="portal-card" style="flex-direction: row; align-items: center; justify-content: space-between; padding: 10px 18px;">
+            <div>
+              <div class="portal-name" style="font-size: 0.96rem;">Tech in Asia Jobs 🌏</div>
+              <div class="portal-desc">Premier platform for tech, hardware, IoT, and high-growth innovation roles across Asia-Pacific (Singapore, Tokyo, regional hubs).</div>
+            </div>
+            <div class="portal-url" style="font-size: 0.8rem; white-space: nowrap;">techinasia.com/jobs/ ↗</div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 14: DIRECT COMPANY CAREER PAGES
+         ======================================================== -->
+    <section class="slide" id="slide-14" data-index="14">
+      <div class="slide-job-container">
+        
+        <div class="slide-job-header">
+          <div class="badge-accent">The Hidden Job Market</div>
+          <h2 class="slide-job-title">
+            Direct Company Career Pages <span style="color: var(--accent-orange-bright);">Target the Source</span>
+          </h2>
+          <p class="slide-job-subtitle">
+            Don't just rely on job portals. Many multinational giants fill up to 70% of engineering positions directly through their proprietary career portals.
+          </p>
+        </div>
+
+        <div class="company-sectors-grid">
+          
+          <!-- Sector 1: Oil & Gas -->
+          <div class="sector-card">
+            <div class="sector-header">
+              <div class="sector-icon">🛢️</div>
+              <div class="sector-name">Oil & Gas</div>
+            </div>
+            <ul class="sector-company-list">
+              <li class="sector-company-item">Baker Hughes</li>
+              <li class="sector-company-item">SLB (Schlumberger)</li>
+              <li class="sector-company-item">Halliburton</li>
+              <li class="sector-company-item">Weatherford</li>
+              <li class="sector-company-item">Saudi Aramco</li>
+              <li class="sector-company-item">PETRONAS</li>
+            </ul>
+          </div>
+
+          <!-- Sector 2: Energy & EPC -->
+          <div class="sector-card">
+            <div class="sector-header">
+              <div class="sector-icon">⚡</div>
+              <div class="sector-name">Energy & EPC</div>
+            </div>
+            <ul class="sector-company-list">
+              <li class="sector-company-item">Siemens Energy</li>
+              <li class="sector-company-item">GE Vernova</li>
+              <li class="sector-company-item">Schneider Electric</li>
+              <li class="sector-company-item">ABB</li>
+              <li class="sector-company-item">Worley</li>
+              <li class="sector-company-item">Technip Energies</li>
+              <li class="sector-company-item">McDermott</li>
+            </ul>
+          </div>
+
+          <!-- Sector 3: Mining -->
+          <div class="sector-card">
+            <div class="sector-header">
+              <div class="sector-icon">⛏️</div>
+              <div class="sector-name">Mining</div>
+            </div>
+            <ul class="sector-company-list">
+              <li class="sector-company-item">Freeport-McMoRan</li>
+              <li class="sector-company-item">Rio Tinto</li>
+              <li class="sector-company-item">BHP</li>
+              <li class="sector-company-item">Vale</li>
+              <li class="sector-company-item">Newmont</li>
+            </ul>
+          </div>
+
+          <!-- Sector 4: Manufacturing & Automotive -->
+          <div class="sector-card">
+            <div class="sector-header">
+              <div class="sector-icon">🚗</div>
+              <div class="sector-name">Manufacturing & Auto</div>
+            </div>
+            <ul class="sector-company-list">
+              <li class="sector-company-item">Bosch</li>
+              <li class="sector-company-item">Siemens</li>
+              <li class="sector-company-item">Schneider Electric</li>
+              <li class="sector-company-item">Tesla</li>
+              <li class="sector-company-item">BYD</li>
+              <li class="sector-company-item">Toyota</li>
+            </ul>
+          </div>
+
+          <!-- Sector 5: Technology & Semiconductors -->
+          <div class="sector-card">
+            <div class="sector-header">
+              <div class="sector-icon">💻</div>
+              <div class="sector-name">Tech & Semiconductor</div>
+            </div>
+            <ul class="sector-company-list">
+              <li class="sector-company-item">NVIDIA</li>
+              <li class="sector-company-item">Intel</li>
+              <li class="sector-company-item">Qualcomm</li>
+              <li class="sector-company-item">AMD</li>
+              <li class="sector-company-item">Samsung Electronics</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 15: MY JOB-HUNTING STRATEGY
+         ======================================================== -->
+    <section class="slide" id="slide-15" data-index="15">
+      <div class="slide-job-container">
+        
+        <div class="slide-job-header" style="margin-bottom: 16px;">
+          <div class="badge-accent">Proven Roadmap & Mindset</div>
+          <h2 class="slide-job-title">
+            My Job-Hunting Strategy <span style="color: var(--accent-orange-bright);">7 Practical Steps</span>
+          </h2>
+          <p class="slide-job-subtitle">
+            A disciplined, strategic approach to building leverage, expanding your network, and landing premier engineering opportunities.
+          </p>
+        </div>
+
+        <div class="strategy-layout">
+          
+          <!-- 7 Steps Column -->
+          <div class="strategy-steps-list">
+            <div class="strategy-step-item">
+              <div class="step-number-badge">1</div>
+              <div class="step-text"><strong>Build a strong LinkedIn profile.</strong> Optimize headline, summary, project portfolio, and technical skills keywords.</div>
+            </div>
+
+            <div class="strategy-step-item">
+              <div class="step-number-badge">2</div>
+              <div class="step-text"><strong>Prepare an ATS-friendly CV.</strong> Clean single-column layout, measurable project impacts, and industry-standard keywords.</div>
+            </div>
+
+            <div class="strategy-step-item">
+              <div class="step-number-badge">3</div>
+              <div class="step-text"><strong>Explore multiple job portals.</strong> Combine domestic platforms (Glints, JobStreet), GCC portals (Naukrigulf, Bayt), and global platforms.</div>
+            </div>
+
+            <div class="strategy-step-item">
+              <div class="step-number-badge">4</div>
+              <div class="step-text"><strong>Identify target companies and visit official career pages.</strong> Don't wait for third-party aggregators; apply directly at the source.</div>
+            </div>
+
+            <div class="strategy-step-item">
+              <div class="step-number-badge">5</div>
+              <div class="step-text"><strong>Connect with recruiters, hiring managers, and industry professionals.</strong> Send thoughtful messages, engage with posts, build genuine relationships.</div>
+            </div>
+
+            <div class="strategy-step-item">
+              <div class="step-number-badge">6</div>
+              <div class="step-text"><strong>Apply consistently, not randomly.</strong> Tailor your applications to job descriptions; consistency and relevance beat spamming.</div>
+            </div>
+
+            <div class="strategy-step-item">
+              <div class="step-number-badge">7</div>
+              <div class="step-text"><strong>Improve your English, technical skills, and interview capabilities.</strong> Practice communication, technical fundamentals, and problem-solving storytelling.</div>
+            </div>
+          </div>
+
+          <!-- Right Column: Dramatic Remember Box -->
+          <div class="strategy-remember-wrapper">
+            <div class="remember-card">
+              <div class="remember-badge-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                REMEMBER
+              </div>
+              <blockquote class="remember-quote-text">
+                "Don't just wait for job vacancies to appear. Identify the companies you want to work for, explore their opportunities, connect with their people, and make yourself a candidate they want to hire."
+              </blockquote>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <!-- Lightbox Modal for Gallery Enlargement -->
@@ -2699,9 +3541,9 @@
       </div>
     </div>
 
-    <!-- Slide Indicators (10 Slides) -->
+    <!-- Slide Indicators (15 Slides) -->
     <div class="deck-indicators" id="indicators">
-      <div class="indicator-pill active" onclick="goToSlide(1)" title="Slide 1: Hero"></div>
+      <div class="indicator-pill active" onclick="goToSlide(1)" title="Slide 1: Hero Cover"></div>
       <div class="indicator-pill" onclick="goToSlide(2)" title="Slide 2: 2021 Crossroads"></div>
       <div class="indicator-pill" onclick="goToSlide(3)" title="Slide 3: Transformation"></div>
       <div class="indicator-pill" onclick="goToSlide(4)" title="Slide 4: Academics (Polinema)"></div>
@@ -2711,6 +3553,11 @@
       <div class="indicator-pill" onclick="goToSlide(8)" title="Slide 8: Recharge POD & Regenesis"></div>
       <div class="indicator-pill" onclick="goToSlide(9)" title="Slide 9: Qatar F1 Achievement"></div>
       <div class="indicator-pill" onclick="goToSlide(10)" title="Slide 10: Where Can EE Graduates Go?"></div>
+      <div class="indicator-pill" onclick="goToSlide(11)" title="Slide 11: Where to Find Jobs — Indonesia"></div>
+      <div class="indicator-pill" onclick="goToSlide(12)" title="Slide 12: Where to Find Jobs — Middle East"></div>
+      <div class="indicator-pill" onclick="goToSlide(13)" title="Slide 13: Where to Find Jobs — International"></div>
+      <div class="indicator-pill" onclick="goToSlide(14)" title="Slide 14: Direct Company Career Pages"></div>
+      <div class="indicator-pill" onclick="goToSlide(15)" title="Slide 15: My Job-Hunting Strategy"></div>
     </div>
 
     <!-- Navigation Arrows -->
@@ -2727,7 +3574,7 @@
 
   <script>
     // State
-    const totalSlides = 10;
+    const totalSlides = 15;
     let currentSlide = 1;
 
     // Elements
