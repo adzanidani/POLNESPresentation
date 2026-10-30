@@ -1,0 +1,2971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Journey & Portfolio — Muhammad Nur Hidayatullah Adzani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-black: #060709;
+      --bg-surface: #0e1017;
+      --bg-card: rgba(16, 18, 25, 0.88);
+      --bg-card-border: rgba(255, 107, 0, 0.22);
+      --accent-orange: #ff6b00;
+      --accent-orange-light: #ff8c33;
+      --accent-orange-bright: #ffa259;
+      --accent-orange-glow: rgba(255, 107, 0, 0.28);
+      --accent-orange-subtle: rgba(255, 107, 0, 0.09);
+      --text-white: #ffffff;
+      --text-muted: #9aa1b2;
+      --text-dim: #646a7d;
+      --text-light: #e4e7ee;
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-light);
+      font-family: var(--font-main);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Ambient Lighting Mesh */
+    .bg-mesh {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .mesh-glow-1 {
+      position: absolute;
+      top: -20%;
+      right: 2%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(255, 107, 0, 0.11) 0%, rgba(255, 107, 0, 0) 65%);
+      filter: blur(60px);
+      animation: floatSlow 20s ease-in-out infinite alternate;
+    }
+
+    .mesh-glow-2 {
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(255, 120, 20, 0.08) 0%, rgba(255, 107, 0, 0) 70%);
+      filter: blur(70px);
+      animation: floatSlow 24s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-30px, 40px) scale(1.1); }
+    }
+
+    /* Top Progress Bar */
+    .progress-bar-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      z-index: 50;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 10%;
+      background: linear-gradient(90deg, #ff4d00, var(--accent-orange), var(--accent-orange-bright));
+      box-shadow: 0 0 14px var(--accent-orange);
+      transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Deck Header */
+    header.deck-header {
+      position: relative;
+      z-index: 30;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 44px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(6, 7, 9, 0.75);
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-white);
+    }
+
+    .brand-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--accent-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-orange);
+      display: inline-block;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .slide-counter {
+      font-family: var(--font-display);
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .slide-counter .current-idx {
+      color: var(--accent-orange);
+      font-size: 1.25rem;
+      min-width: 24px;
+      display: inline-block;
+      text-align: right;
+    }
+
+    /* Fullscreen Button */
+    .btn-fullscreen {
+      background: rgba(255, 107, 0, 0.12);
+      border: 1px solid rgba(255, 107, 0, 0.4);
+      color: var(--text-white);
+      border-radius: var(--radius-sm);
+      padding: 8px 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      font-family: var(--font-main);
+      transition: var(--transition);
+      outline: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-fullscreen:hover {
+      background: var(--accent-orange);
+      border-color: var(--accent-orange);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 18px rgba(255, 107, 0, 0.5);
+    }
+
+    .btn-fullscreen:active {
+      transform: translateY(0);
+    }
+
+    .btn-fullscreen svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Viewport Area */
+    main.deck-viewport {
+      flex: 1;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 64px;
+      overflow: hidden;
+    }
+
+    /* Floating Side Navigation Arrows */
+    .side-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 40;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(14, 16, 23, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+      outline: none;
+    }
+
+    .side-arrow:hover:not(:disabled) {
+      background: var(--accent-orange);
+      border-color: var(--accent-orange);
+      color: #fff;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 0 24px rgba(255, 107, 0, 0.5);
+    }
+
+    .side-arrow:active:not(:disabled) {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .side-arrow:disabled {
+      opacity: 0.15;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .side-arrow.prev { left: 14px; }
+    .side-arrow.next { right: 14px; }
+
+    .side-arrow svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Slide Component */
+    .slide {
+      position: absolute;
+      width: 100%;
+      max-width: 1320px;
+      height: 100%;
+      max-height: 730px;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.97) translateY(16px);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Common Badges */
+    .badge-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      background: var(--accent-orange-subtle);
+      border: 1px solid rgba(255, 107, 0, 0.32);
+      border-radius: 9999px;
+      color: var(--accent-orange-bright);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+      width: fit-content;
+    }
+
+    .badge-accent::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-orange);
+    }
+
+    /* =========================================
+       SLIDE 1: HERO COVER
+       ========================================= */
+    .slide-1-container {
+      display: grid;
+      grid-template-columns: 390px 1fr;
+      gap: 52px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 44px 52px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-1-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle at 100% 0%, rgba(255, 107, 0, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .photo-wrapper {
+      position: relative;
+      width: 280px;
+      height: 350px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 107, 0, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 28px var(--accent-orange-glow);
+      background: #12131a;
+      transition: var(--transition);
+    }
+
+    .photo-wrapper:hover {
+      border-color: var(--accent-orange);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 107, 0, 0.45);
+      transform: translateY(-3px);
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .photo-bottom-glow {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(6, 7, 9, 0.7), transparent);
+      pointer-events: none;
+    }
+
+    .profile-meta {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .profile-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-white);
+      letter-spacing: -0.01em;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .profile-name span.accent-name {
+      color: var(--accent-orange-bright);
+    }
+
+    .profile-role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 107, 0, 0.12);
+      border: 1px solid rgba(255, 107, 0, 0.35);
+      color: var(--accent-orange-bright);
+      padding: 5px 14px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .hero-bio {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.16;
+      color: var(--text-white);
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+
+    .hero-title .highlight {
+      color: var(--accent-orange-bright);
+    }
+
+    .hero-paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 1.02rem;
+      line-height: 1.68;
+      color: #d1d6e2;
+    }
+
+    .hero-paragraphs p {
+      position: relative;
+      padding-left: 18px;
+      border-left: 2px solid rgba(255, 107, 0, 0.4);
+    }
+
+    .hero-paragraphs strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .tag-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+
+    .tag-pill:hover {
+      background: rgba(255, 107, 0, 0.12);
+      border-color: rgba(255, 107, 0, 0.35);
+      color: var(--text-white);
+    }
+
+    /* =========================================
+       SLIDE 2: NARRATIVE (2021) - TULISAN SAJA
+       ========================================= */
+    #slide-2.slide {
+      max-width: 1760px;
+    }
+
+    .slide-2-pure-container {
+      max-width: 1720px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 20px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 38px;
+    }
+
+    .narrative-pure-p {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.15vw, 1.12rem);
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.82;
+      letter-spacing: -0.005em;
+      margin: 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* =========================================
+       SLIDE 3: FIVE YEARS LATER (2026)
+       ========================================= */
+    .slide-3-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 38px 50px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .slide-3-header { margin-bottom: 20px; }
+    .slide-3-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .journey-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .journey-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .journey-card:hover {
+      background: rgba(255, 107, 0, 0.045);
+      border-color: rgba(255, 107, 0, 0.38);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .journey-card:hover::before { opacity: 1; }
+
+    .card-icon-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 107, 0, 0.12);
+      border: 1px solid rgba(255, 107, 0, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-orange-bright);
+    }
+
+    .card-icon-badge svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .card-heading {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #c9cedc;
+      flex-grow: 1;
+    }
+
+    .card-desc strong { color: #ffffff; }
+
+    .language-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .lang-chip {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e5e7eb;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+
+    .lang-chip.active-lang {
+      border-color: rgba(255, 107, 0, 0.35);
+      color: var(--accent-orange-bright);
+      background: rgba(255, 107, 0, 0.1);
+    }
+
+    .takeaway-banner {
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.14) 0%, rgba(16, 18, 25, 0.98) 75%);
+      border: 1px solid rgba(255, 107, 0, 0.32);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .takeaway-text { flex: 1; }
+    .takeaway-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .takeaway-quote {
+      font-size: 0.96rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-white);
+    }
+
+    .takeaway-quote span.gold {
+      color: var(--accent-orange-bright);
+      font-weight: 700;
+    }
+
+    /* =========================================
+       SLIDE 4: ACADEMIC BACKGROUND
+       ========================================= */
+    .slide-4-container {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 46px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 38px 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .academic-photo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .academic-photo-wrapper {
+      position: relative;
+      width: 280px;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 107, 0, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 28px var(--accent-orange-glow);
+      background: #12131a;
+      transition: var(--transition);
+    }
+
+    .academic-photo-wrapper:hover {
+      border-color: var(--accent-orange);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 38px rgba(255, 107, 0, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .academic-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.45) translate(-4%, -12%);
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .academic-photo-wrapper:hover img {
+      transform: scale(1.5) translate(-4%, -12%);
+    }
+
+    .academic-photo-caption {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .academic-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .university-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .univ-logo-box {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 0 20px rgba(255, 107, 0, 0.35);
+      flex-shrink: 0;
+    }
+
+    .univ-logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .univ-meta h2 {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.2;
+    }
+
+    .univ-meta .degree-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent-orange-bright);
+      margin-top: 4px;
+    }
+
+    .univ-meta .degree-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .thesis-box {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 107, 0, 0.3);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 20px;
+    }
+
+    .thesis-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-orange-bright);
+      margin-bottom: 4px;
+    }
+
+    .thesis-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-white);
+      line-height: 1.45;
+    }
+
+    .academic-grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .acad-item-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: var(--transition);
+    }
+
+    .acad-item-card:hover {
+      background: rgba(255, 107, 0, 0.05);
+      border-color: rgba(255, 107, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .acad-item-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .acad-item-desc {
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: #b8becd;
+    }
+
+    /* =========================================
+       SLIDE 5: FIRST CAREER - iMAKE OFFICIAL
+       ========================================= */
+    .slide-5-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 34px 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .imake-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .imake-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .imake-logo-box-lg {
+      width: 102px;
+      height: 102px;
+      border-radius: 20px;
+      background: #ffffff;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid var(--accent-orange);
+      box-shadow: 0 0 28px rgba(255, 107, 0, 0.4);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .imake-logo-box-lg img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scale(1.1);
+    }
+
+    .imake-titles h2 {
+      font-family: var(--font-display);
+      font-size: 1.95rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.2;
+    }
+
+    .imake-titles .imake-subtitle {
+      font-size: 0.95rem;
+      color: var(--accent-orange-bright);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .imake-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: rgba(255, 107, 0, 0.07);
+      border: 1px solid rgba(255, 107, 0, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      background: rgba(255, 107, 0, 0.12);
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent-orange-bright);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #cfd4df;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    .imake-columns {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+    }
+
+    .imake-col-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .col-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-title .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-orange);
+    }
+
+    .responsibilities-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .responsibilities-list li {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: #cbd0dc;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .responsibilities-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-orange-bright);
+      font-weight: bold;
+    }
+
+    .responsibilities-list li strong { color: #ffffff; }
+
+    .capabilities-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cap-badge {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: #d1d5e2;
+      transition: var(--transition);
+    }
+
+    .cap-badge:hover {
+      border-color: rgba(255, 107, 0, 0.35);
+      background: rgba(255, 107, 0, 0.06);
+    }
+
+    .cap-badge strong { color: var(--accent-orange-bright); }
+
+    /* =========================================
+       SLIDE 6: PT UTAMA MARINA INDONESIA
+       ========================================= */
+    .slide-6-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 34px 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .umi-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .umi-logo-box {
+      width: 86px;
+      height: 86px;
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 0 22px rgba(255, 107, 0, 0.35);
+      flex-shrink: 0;
+    }
+
+    .umi-logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .vessel-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 6px;
+    }
+
+    .vessel-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2e6f0;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 5px;
+    }
+
+    /* =========================================
+       SLIDE 7: PT KASTARA GROUP INDONESIA (CEO)
+       ========================================= */
+    .slide-7-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 34px 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .kastara-logo-box {
+      width: 130px;
+      height: 86px;
+      border-radius: 18px;
+      background: #000000;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 0 22px rgba(255, 107, 0, 0.35);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .kastara-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* =========================================
+       SLIDE 8: RECHARGE POD & REGENESIS (With 3D Video)
+       ========================================= */
+    .slide-8-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 26px 44px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .regenesis-logo-box {
+      width: 130px;
+      height: 76px;
+      border-radius: 18px;
+      background: #000000;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 0 24px rgba(255, 107, 0, 0.4);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .regenesis-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .slide-8-layout {
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .video-showcase-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .video-player-wrapper {
+      position: relative;
+      width: 100%;
+      height: 255px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 107, 0, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 30px var(--accent-orange-glow);
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-player-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-bottom-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 2px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .video-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 107, 0, 0.12);
+      border: 1px solid rgba(255, 107, 0, 0.3);
+      color: var(--accent-orange-bright);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .slide-8-compact-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    /* =========================================
+       SLIDE 9: QATAR F1 GRAND PRIX ACHIEVEMENT
+       ========================================= */
+    .slide-9-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 26px 44px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .f1-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .f1-title-group h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .f1-title-group .f1-sub {
+      font-size: 0.9rem;
+      color: var(--accent-orange-bright);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .f1-spotlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 14px;
+    }
+
+    .f1-spotlight-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 107, 0, 0.35);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .f1-spotlight-card:hover {
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(255, 107, 0, 0.2);
+    }
+
+    .f1-spotlight-img {
+      height: 200px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    .f1-spotlight-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s ease;
+    }
+
+    .f1-spotlight-card:hover .f1-spotlight-img img {
+      transform: scale(1.04);
+    }
+
+    .f1-spotlight-caption {
+      padding: 10px 16px;
+      background: rgba(14, 16, 23, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .f1-spotlight-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .f1-spotlight-desc {
+      font-size: 0.78rem;
+      color: #bcc2d1;
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    .gallery-ribbon-container {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .gallery-ribbon-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gallery-thumbnails-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-orange) rgba(255, 255, 255, 0.05);
+    }
+
+    .gallery-thumbnails-strip::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .gallery-thumbnails-strip::-webkit-scrollbar-thumb {
+      background: var(--accent-orange);
+      border-radius: 9999px;
+    }
+
+    .thumb-item {
+      flex: 0 0 94px;
+      height: 62px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+      background: #000;
+    }
+
+    .thumb-item:hover {
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+    }
+
+    .thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =========================================
+       SLIDE 10: CAREER HORIZONS (Text Guide)
+       ========================================= */
+    .slide-10-container {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-lg);
+      padding: 30px 48px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 107, 0, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: relative;
+    }
+
+    .slide-10-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .career-left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .career-heading {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .career-intro-p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #cfd4df;
+    }
+
+    .career-intro-p strong {
+      color: var(--accent-orange-bright);
+    }
+
+    .career-quote-box {
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.12) 0%, rgba(18, 20, 28, 0.95) 80%);
+      border: 1px solid rgba(255, 107, 0, 0.35);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+    }
+
+    .career-quote-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-orange-bright);
+      margin-bottom: 4px;
+    }
+
+    .career-quote-text {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #e5e8f0;
+      font-style: italic;
+    }
+
+    .career-quote-text strong {
+      color: #ffffff;
+      font-style: normal;
+    }
+
+    .career-right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .career-industries-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      padding-right: 2px;
+    }
+
+    .industry-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 7px 11px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .industry-card:hover {
+      background: rgba(255, 107, 0, 0.06);
+      border-color: rgba(255, 107, 0, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .industry-card-title {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .industry-card-title .dot {
+      width: 5px;
+      height: 5px;
+      background: var(--accent-orange);
+      border-radius: 50%;
+    }
+
+    .industry-card-roles {
+      font-size: 0.74rem;
+      line-height: 1.35;
+      color: #aeb4c4;
+    }
+
+    .other-opportunities-card {
+      grid-column: 1 / -1;
+      background: rgba(255, 107, 0, 0.08);
+      border: 1px dashed rgba(255, 107, 0, 0.35);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: #d8dce8;
+    }
+
+    .other-opportunities-card strong {
+      color: var(--accent-orange-bright);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.94);
+      backdrop-filter: blur(16px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-img-wrapper {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 0 40px rgba(255, 107, 0, 0.4);
+      position: relative;
+    }
+
+    .lightbox-img-wrapper img {
+      max-width: 100%;
+      max-height: 85vh;
+      display: block;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--accent-orange);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      transition: var(--transition);
+      z-index: 10;
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent-orange);
+      transform: scale(1.1);
+    }
+
+    /* Deck Footer */
+    footer.deck-footer {
+      position: relative;
+      z-index: 30;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 44px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(6, 7, 9, 0.75);
+    }
+
+    .nav-hints {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    .kbd-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    kbd {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .deck-indicators {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .indicator-pill {
+      height: 6px;
+      width: 16px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .indicator-pill.active {
+      width: 36px;
+      background: var(--accent-orange);
+      box-shadow: 0 0 12px var(--accent-orange);
+    }
+
+    .indicator-pill:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-arrows {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-arrow-footer {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .btn-arrow-footer:hover:not(:disabled) {
+      background: var(--accent-orange);
+      border-color: var(--accent-orange);
+      color: #fff;
+      transform: scale(1.08);
+      box-shadow: 0 0 16px rgba(255, 107, 0, 0.45);
+    }
+
+    .btn-arrow-footer:active:not(:disabled) {
+      transform: scale(0.96);
+    }
+
+    .btn-arrow-footer:disabled {
+      opacity: 0.22;
+      cursor: not-allowed;
+    }
+
+    .btn-arrow-footer svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+    }
+
+    /* =========================================
+       TRUE FULLSCREEN PRESENTATION MODE (F11 / Esc)
+       ========================================= */
+    :fullscreen body, 
+    :-webkit-full-screen body,
+    body.is-fullscreen-mode {
+      height: 100vh;
+      width: 100vw;
+      background: #000000;
+    }
+
+    :fullscreen main.deck-viewport, 
+    :-webkit-full-screen main.deck-viewport,
+    body.is-fullscreen-mode main.deck-viewport {
+      padding: 18px 48px;
+      height: calc(100vh - 120px);
+    }
+
+    :fullscreen .slide, 
+    :-webkit-full-screen .slide,
+    body.is-fullscreen-mode .slide {
+      max-width: 1480px;
+      max-height: 860px;
+    }
+
+    :fullscreen .side-arrow,
+    :-webkit-full-screen .side-arrow,
+    body.is-fullscreen-mode .side-arrow {
+      width: 58px;
+      height: 58px;
+    }
+
+    :fullscreen .side-arrow svg,
+    :-webkit-full-screen .side-arrow svg,
+    body.is-fullscreen-mode .side-arrow svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* Fallback Fullscreen Class when inside restricted iframes */
+    body.fallback-fullscreen {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      width: 100vw;
+      height: 100vh;
+      background: #000000;
+    }
+
+    body.fallback-fullscreen main.deck-viewport {
+      padding: 16px 40px;
+      height: calc(100vh - 110px);
+    }
+
+    body.fallback-fullscreen .slide {
+      max-width: 1480px;
+      max-height: 860px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-height: 820px) {
+      main.deck-viewport { padding: 12px 48px; }
+      .slide-1-container, .slide-4-container { padding: 26px 36px; gap: 30px; }
+      .photo-wrapper, .academic-photo-wrapper { width: 220px; height: 285px; }
+      .hero-title { font-size: 1.8rem; margin-bottom: 12px; }
+      .hero-paragraphs { font-size: 0.92rem; gap: 10px; }
+      #slide-2.slide { max-width: 100%; }
+      .slide-2-pure-container { padding: 15px 24px; gap: 20px; }
+      .narrative-pure-p { font-size: 1.05rem; line-height: 1.65; }
+      .slide-3-container, .slide-5-container, .slide-6-container, .slide-7-container, .slide-8-container, .slide-9-container, .slide-10-container {
+        padding: 22px 34px;
+      }
+      .slide-3-title, .imake-titles h2, .f1-title-group h2, .career-heading { font-size: 1.55rem; }
+      .stat-number { font-size: 1.45rem; }
+      .responsibilities-list li { font-size: 0.82rem; }
+      .video-player-wrapper { height: 210px; }
+      .f1-spotlight-img { height: 175px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Canvas -->
+  <div class="bg-mesh">
+    <div class="mesh-glow-1"></div>
+    <div class="mesh-glow-2"></div>
+  </div>
+
+  <!-- Top Progress Bar -->
+  <div class="progress-bar-container">
+    <div class="progress-bar-fill" id="progressBar"></div>
+  </div>
+
+  <!-- Deck Top Navigation Bar -->
+  <header class="deck-header">
+    <div class="brand-mark">
+      <span class="brand-dot"></span>
+      <span>Career Journey & Engineering Portfolio</span>
+    </div>
+
+    <div class="header-actions">
+      <div class="slide-counter">
+        <span class="current-idx" id="slideNumber">01</span> <span style="opacity:0.4;">/</span> <span id="totalSlides">10</span>
+      </div>
+
+      <!-- Fullscreen Toggle Button (Triggers Native Fullscreen / F11) -->
+      <button class="btn-fullscreen" id="fullscreenBtn" title="Toggle Fullscreen (F11 / F / Esc)">
+        <svg id="fsIconExpand" viewBox="0 0 24 24">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+        <svg id="fsIconCompress" viewBox="0 0 24 24" style="display: none;">
+          <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path>
+        </svg>
+        <span id="fsBtnLabel">Fullscreen (F11)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Presentation Main Viewport -->
+  <main class="deck-viewport" id="viewport">
+
+    <!-- Floating Navigation Arrows -->
+    <button class="side-arrow prev" id="sidePrevBtn" title="Previous Slide (Left Arrow)">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    
+    <button class="side-arrow next" id="sideNextBtn" title="Next Slide (Right Arrow)">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <!-- ========================================================
+         SLIDE 1: HERO COVER
+         ======================================================== -->
+    <section class="slide active" id="slide-1" data-index="1">
+      <div class="slide-1-container">
+        
+        <!-- Left: Portrait Photo & Profile Card -->
+        <div class="profile-card">
+          <div class="photo-wrapper">
+            <img src="images/1.jpeg" alt="Muhammad Nur Hidayatullah Adzani" onerror="if(this.src.indexOf('image/')===-1) this.src='image/1.jpeg';">
+            <div class="photo-bottom-glow"></div>
+          </div>
+          <div class="profile-meta">
+            <h2 class="profile-name">Muhammad Nur Hidayatullah <span class="accent-name">Adzani</span></h2>
+            <div class="profile-role-badge">
+              <span class="brand-dot" style="width: 6px; height: 6px;"></span>
+              Research Assistant Engineer
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Professional Bio & Engineering Summary -->
+        <div class="hero-bio">
+          <div class="badge-accent">Professional Overview</div>
+          
+          <h1 class="hero-title">
+            Multidisciplinary <span class="highlight">Engineer</span>
+          </h1>
+
+          <div class="hero-paragraphs">
+            <p>
+              Multidisciplinary Engineer specializing in <strong>Electrical Engineering</strong>, <strong>Electronics</strong>, <strong>Mechatronics</strong>, and <strong>IoT</strong>, with complementary expertise in Technical Sales, Product Development, and Manufacturing. Combining hands-on engineering capabilities with commercial insight to design, develop, and scale innovative, production-ready solutions.
+            </p>
+            <p>
+              Bringing <strong>7+ years of hands-on experience</strong> across engineering and technology projects, with a proven track record of delivering solutions in custom electronics, embedded systems, intelligent mechatronics, and connected IoT applications—from initial concept and prototyping to product development, system integration, and production readiness.
+            </p>
+          </div>
+
+          <div class="hero-tags">
+            <span class="tag-pill">Electrical Engineer</span>
+            <span class="tag-pill">Electronics Engineer</span>
+            <span class="tag-pill">Mechatronics</span>
+            <span class="tag-pill">IoT</span>
+            <span class="tag-pill">System Integration</span>
+            <span class="tag-pill">Sales</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 2: NARRATIVE (2021) - TULISAN SAJA
+         ======================================================== -->
+    <section class="slide" id="slide-2" data-index="2">
+      <div class="slide-2-pure-container">
+        <p class="narrative-pure-p">
+          Five years ago in 2021, when I graduated, I was just like any other normal fresh graduate.<br>
+          Lost, confused, and uncertain about what came next.
+        </p>
+
+        <p class="narrative-pure-p">
+          I had no clear career direction, no one to guide me, and no idea where to start. I didn't know which companies to apply to, how to build a proper CV, or even how to navigate the professional world.<br>
+          And to make things worse, I was broke.
+        </p>
+
+        <p class="narrative-pure-p">
+          I had a degree in my hands, but no roadmap ahead of me. Just a thousand questions, a little hope, and the fear of not knowing where life would take me.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 3: FIVE YEARS LATER (2026)
+         ======================================================== -->
+    <section class="slide" id="slide-3" data-index="3">
+      <div class="slide-3-container">
+        
+        <div class="slide-3-header">
+          <div class="badge-accent">Five Years Later · Journey of Transformation</div>
+          <h2 class="slide-3-title">
+            Today, life has taken me somewhere <span style="color: var(--accent-orange-bright);">I could never have imagined</span> back then.
+          </h2>
+        </div>
+
+        <!-- 3 Feature Pillars -->
+        <div class="journey-grid">
+          <div class="journey-card">
+            <div class="card-icon-badge">
+              <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3 class="card-heading">Global R&D Engineer</h3>
+            <p class="card-desc">
+              I am now working as an <strong>R&D Engineer in Electrical and Electronics Engineering</strong> at a multinational company behind a wellness product associated with world-class tennis champion <strong>Novak Djokovic</strong>. I also have the opportunity to represent the company at various international events around the world.
+            </p>
+          </div>
+
+          <div class="journey-card">
+            <div class="card-icon-badge">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3 class="card-heading">International Markets & Consulting</h3>
+            <p class="card-desc">
+              Beyond engineering, I serve as an <strong>Indonesian Area Representative</strong> for agricultural and fisheries commodities, connecting Indonesian products with international markets. I also work as an <strong>Electrical Engineering Consultant</strong> for a construction startup focused on sustainability and green building solutions.
+            </p>
+          </div>
+
+          <div class="journey-card">
+            <div class="card-icon-badge">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3 class="card-heading">Cross-Cultural & Multilingual</h3>
+            <p class="card-desc">
+              Along the way, I've developed an interest in languages and cross-cultural communication. Today, I speak:
+            </p>
+            <div class="language-badges">
+              <span class="lang-chip active-lang">Indonesian</span>
+              <span class="lang-chip active-lang">Javanese</span>
+              <span class="lang-chip active-lang">Madurese</span>
+              <span class="lang-chip active-lang">English</span>
+              <span class="lang-chip active-lang">Chinese (Mandarin)</span>
+              <span class="lang-chip active-lang">French</span>
+              <span class="lang-chip" style="opacity: 0.7;">+ Arabic, Italian, Spanish</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="takeaway-banner">
+          <div class="takeaway-text">
+            <div class="takeaway-sub">
+              From a broke, confused graduate who didn't even know where to send his first CV to someone navigating multiple industries, international business, engineering, and different cultures.
+            </div>
+            <div class="takeaway-quote">
+              "I'm still learning, still growing, and still figuring things out. But one thing I've learned: <span class="gold">you don't need to have your entire life figured out when you graduate. You just need to be brave enough to take the first step.</span>"
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 4: ACADEMIC BACKGROUND (Face adjusted higher)
+         ======================================================== -->
+    <section class="slide" id="slide-4" data-index="4">
+      <div class="slide-4-container">
+        
+        <!-- Left: Campus Field Practice Photo (15.jpg) -->
+        <div class="academic-photo-card">
+          <div class="academic-photo-wrapper">
+            <img src="images/15.jpg" alt="Muhammad Nur Hidayatullah Adzani - Field Practice" onerror="if(this.src.indexOf('image/')===-1) this.src='image/15.jpg';">
+            <div class="photo-bottom-glow"></div>
+          </div>
+          <div class="academic-photo-caption">
+            <span class="brand-dot" style="width: 6px; height: 6px;"></span>
+            <span>Hands-on Engineering & Substation Field Practice</span>
+          </div>
+        </div>
+
+        <!-- Right: Academic Details & Polinema Logo (17.jpg) -->
+        <div class="academic-info">
+          
+          <div class="university-header">
+            <div class="univ-logo-box">
+              <img src="images/17.jpg" alt="Politeknik Negeri Malang Logo" onerror="if(this.src.indexOf('image/')===-1) this.src='image/17.jpg';">
+            </div>
+            <div class="univ-meta">
+              <h2>Politeknik Negeri Malang</h2>
+              <div class="degree-title">Bachelor Degree of Electronics Engineering (D4)</div>
+              <div class="degree-sub">2017 – 2021 · Malang, East Java, Indonesia · <strong>GPA: 3.59 / 4.00</strong></div>
+            </div>
+          </div>
+
+          <!-- Thesis Box -->
+          <div class="thesis-box">
+            <div class="thesis-label">Undergraduate Bachelor Thesis</div>
+            <div class="thesis-title">
+              "Smart Metering PDAM System Using Token Number Based on Internet of Things in Household Scale"
+            </div>
+          </div>
+
+          <!-- Academic Highlights Grid -->
+          <div class="academic-grid-cards">
+            <div class="acad-item-card">
+              <div class="acad-item-title">⚡ Mechatronics Lab Assistant</div>
+              <div class="acad-item-desc">
+                Research Assistant at Prof. Budhy Setiawan's Mechatronics Lab, mentoring junior theses & developing 3D printing & renewable energy systems.
+              </div>
+            </div>
+
+            <div class="acad-item-card">
+              <div class="acad-item-title">📜 Patent & Conference Publication</div>
+              <div class="acad-item-desc">
+                Published & patented <em>Smart Monitoring Penggunaan Energi Listrik</em> (ATASEC 2020 · Patent ID EC00202045897) for real-time AC electrical measurement.
+              </div>
+            </div>
+
+            <div class="acad-item-card">
+              <div class="acad-item-title">🚀 Technopreneurship Leadership</div>
+              <div class="acad-item-desc">
+                Head Division of Technopreneur (Workshop Electro Polinema), driving monthly revenues & coaching electronic troubleshooting teams.
+              </div>
+            </div>
+
+            <div class="acad-item-card">
+              <div class="acad-item-title">🏆 Competition & Event Executive</div>
+              <div class="acad-item-desc">
+                Chief Executive for PLC Competition WSEC (50+ participants) & Organizer for International Rooftop Solar Panel Technology Workshop.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 5: FIRST CAREER - iMAKE OFFICIAL (Logo enlarged, 3 proj/mo)
+         ======================================================== -->
+    <section class="slide" id="slide-5" data-index="5">
+      <div class="slide-5-container">
+        
+        <!-- Header: Logo (9.jpg) & Titles -->
+        <div class="imake-header">
+          <div class="imake-brand-group">
+            <div class="imake-logo-box-lg">
+              <img src="images/9.jpg" alt="iMake Official Logo" onerror="if(this.src.indexOf('image/')===-1) this.src='image/9.jpg';">
+            </div>
+            <div class="imake-titles">
+              <h2>iMake Official</h2>
+              <div class="imake-subtitle">
+                First Career: Small Business for Custom Hardware & IoT Projects · Oct 2019 – Present
+              </div>
+            </div>
+          </div>
+          <div class="badge-accent" style="margin-bottom: 0;">Founder & Hardware Lead</div>
+        </div>
+
+        <!-- 4 Key Performance Metrics -->
+        <div class="imake-stats-bar">
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects / Year Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3 / Mo</div>
+            <div class="stat-label">Average Projects / Month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10–30%</div>
+            <div class="stat-label">Client Budget Savings</div>
+          </div>
+        </div>
+
+        <!-- Responsibilities & Scope -->
+        <div class="imake-columns">
+          <div class="imake-col-card">
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Key Responsibilities & Operational Execution</span>
+            </div>
+            <ul class="responsibilities-list">
+              <li>
+                <strong>End-to-End Hardware Lifecycle:</strong> Managed project preparation, component sourcing, custom PCB design, circuit wiring, embedded programming, and final system commissioning.
+              </li>
+              <li>
+                <strong>3D Mechanical & Workshop Manufacturing:</strong> Directed mechanical 3D design and workshop fabrication according to sensor/actuator principles, reducing mechanical errors and over-budgeting by <strong>20%</strong>.
+              </li>
+              <li>
+                <strong>System Optimization & Cost Reduction:</strong> Consulted and redesigned client operating principles, enhancing efficiency while decreasing overall client project budgets by <strong>10% to 30%</strong>.
+              </li>
+              <li>
+                <strong>High-Volume & Rapid Delivery:</strong> Consistent delivery averaging <strong>3 projects per month (50+ projects per year)</strong> with an average completion time of ~1 month and 100% satisfaction.
+              </li>
+            </ul>
+          </div>
+
+          <div class="imake-col-card">
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Hardware & Engineering Highlights</span>
+            </div>
+            <div class="capabilities-box">
+              <div class="cap-badge">
+                <strong>IoT & Smart Monitoring:</strong> Telemetry systems, wireless sensor networks (ESP32, BLE, LoRa, Wi-Fi), and real-time cloud data dashboards.
+              </div>
+              <div class="cap-badge">
+                <strong>Intelligent Mechatronics:</strong> Motor controllers, PLC integration, automated electro-pneumatics, and custom actuator mechanisms.
+              </div>
+              <div class="cap-badge">
+                <strong>Digital Display Systems:</strong> Custom controller boards for basketball scoreboards, shot clocks, and synchronized RS-485 displays.
+              </div>
+              <div class="cap-badge">
+                <strong>Rapid Prototyping:</strong> Quick-turn custom PCB fabrication, CNC milling, laser cutting, and 3D-printed industrial enclosures.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 6: PT. UTAMA MARINA INDONESIA (Commissioning Engineer)
+         ======================================================== -->
+    <section class="slide" id="slide-6" data-index="6">
+      <div class="slide-6-container">
+        
+        <div class="umi-header">
+          <div class="imake-brand-group">
+            <div class="umi-logo-box">
+              <img src="images/10.jpg" alt="PT. Utama Marina Indonesia Logo" onerror="if(this.src.indexOf('image/')===-1) this.src='image/10.jpg';">
+            </div>
+            <div class="imake-titles">
+              <h2>PT. Utama Marina Indonesia</h2>
+              <div class="imake-subtitle">
+                Commissioning Engineer (Marine Systems & Industrial Automation) · Jan 2022 – Jan 2023
+              </div>
+            </div>
+          </div>
+          <div class="badge-accent" style="margin-bottom: 0;">Marine Engineering</div>
+        </div>
+
+        <div class="imake-stats-bar">
+          <div class="stat-card">
+            <div class="stat-number">14</div>
+            <div class="stat-label">Commercial Vessels Commissioned</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Class Societies (BKI, DNV, RINA, CCS)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">BWTS</div>
+            <div class="stat-label">Ballast Water Treatment Systems</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Class Inspection Handover Rate</div>
+          </div>
+        </div>
+
+        <div class="imake-columns">
+          <div class="imake-col-card">
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Engineering Responsibilities & Systems</span>
+            </div>
+            <ul class="responsibilities-list">
+              <li>
+                <strong>Lead Commissioning Team:</strong> Led commissioning engineers in validating each electrical and control installation in accordance with rigorous P&ID drawings and marine standards.
+              </li>
+              <li>
+                <strong>PLC & Electrical Troubleshooting:</strong> Identified system anomalies and failures, resolving them through PLC programming and electrical rewiring before sea trials.
+              </li>
+              <li>
+                <strong>Marine Classification Inspections:</strong> Managed class surveys and certified system verification according to type-approval regulations from <strong>BKI, RINA, DNV GL, and CCS</strong>.
+              </li>
+              <li>
+                <strong>Safety & Alarm Engineering:</strong> Designed and installed independent alarm interfaces to improve fault monitoring, fail-safe redundancy, and operational safety.
+              </li>
+            </ul>
+          </div>
+
+          <div class="imake-col-card">
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Commercial Fleet & Vessel Deployments</span>
+            </div>
+            <p style="font-size: 0.85rem; color: #b8becd; line-height: 1.5;">
+              Successfully delivered BWTS commissioning across tankers, container ships, and dry cargo vessels:
+            </p>
+            <div class="vessel-tags">
+              <span class="vessel-chip">MV. Sinar Solo</span>
+              <span class="vessel-chip">MT. Bloom</span>
+              <span class="vessel-chip">MV. Seamec Gallant</span>
+              <span class="vessel-chip">MT. Gaschem Moshel</span>
+              <span class="vessel-chip">MV. Meratus Samarinda</span>
+              <span class="vessel-chip">MV. UACC Manama</span>
+              <span class="vessel-chip">+ 8 Additional Ships</span>
+            </div>
+            <div class="cap-badge" style="margin-top: 10px;">
+              <strong>Cross-Disciplinary Coordination:</strong> Liaised directly between shipyard management, vessel captains/crews, and the corporate Board of Directors with daily technical reporting.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 7: PT. KASTARA GROUP INDONESIA (CEO & Commodities)
+         ======================================================== -->
+    <section class="slide" id="slide-7" data-index="7">
+      <div class="slide-7-container">
+        
+        <div class="imake-header">
+          <div class="imake-brand-group">
+            <div class="kastara-logo-box">
+              <img src="images/19.jpeg" alt="PT. Kastara Group Indonesia Logo" onerror="if(this.src.indexOf('image/')===-1) this.src='image/19.jpeg';">
+            </div>
+            <div class="imake-titles">
+              <h2>PT. Kastara Group Indonesia</h2>
+              <div class="imake-subtitle">
+                Chief Executive Officer (CEO) · Agricultural & Fisheries Commodities
+              </div>
+            </div>
+          </div>
+          <div class="badge-accent" style="margin-bottom: 0;">Executive Leadership</div>
+        </div>
+
+        <div class="imake-stats-bar">
+          <div class="stat-card">
+            <div class="stat-number">CEO</div>
+            <div class="stat-label">Executive Leadership & Vision</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Sales</div>
+            <div class="stat-label">Revenue & Commercial Growth</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Global</div>
+            <div class="stat-label">International Market Linkage</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Agro</div>
+            <div class="stat-label">Commodity Trade & Supply Chain</div>
+          </div>
+        </div>
+
+        <div class="imake-columns">
+          <div class="imake-col-card">
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Executive Roles & Operational Focus</span>
+            </div>
+            <ul class="responsibilities-list">
+              <li>
+                <strong>Chief Executive Leadership:</strong> Steer corporate direction, strategic roadmap, and operational excellence for agricultural commodity business expansion.
+              </li>
+              <li>
+                <strong>Sales & Revenue Generation:</strong> Drive global market business development, lead B2B sales pipelines, and negotiate high-value supply contracts with foreign importers.
+              </li>
+              <li>
+                <strong>Corporate Administration & Governance:</strong> Oversee end-to-end administration, regulatory compliance, trade licensing, export documentation, and fiscal control.
+              </li>
+              <li>
+                <strong>Strategic Partnerships:</strong> Build direct partnerships with local farmer cooperatives, fisheries producers, and international logistics distributors.
+              </li>
+            </ul>
+          </div>
+
+          <div class="imake-col-card">
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Commodity Scope & Commercial Value</span>
+            </div>
+            <div class="capabilities-box">
+              <div class="cap-badge">
+                <strong>Agricultural Commodities:</strong> Exporting high-grade Indonesian agricultural products to competitive overseas markets.
+              </div>
+              <div class="cap-badge">
+                <strong>Fisheries & Marine Commodities:</strong> Connecting premium maritime harvests with verified international seafood supply chains.
+              </div>
+              <div class="cap-badge">
+                <strong>Value-Added Processing:</strong> Enhancing quality grading, export packing standards, and international quarantine compliance.
+              </div>
+              <div class="cap-badge">
+                <strong>Commercial Impact:</strong> Creating fair-trade economic prosperity for domestic producers while securing steady foreign revenue streams.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 8: RECHARGE POD & REGENESIS (3D Video 27.mp4)
+         ======================================================== -->
+    <section class="slide" id="slide-8" data-index="8">
+      <div class="slide-8-container">
+        
+        <div class="imake-header">
+          <div class="imake-brand-group">
+            <div class="regenesis-logo-box">
+              <img src="images/18.jpg" alt="Regenesis Studio Logo" onerror="if(this.src.indexOf('image/')===-1) this.src='image/18.jpg';">
+            </div>
+            <div class="imake-titles">
+              <h2>PT. Recharge POD Bali & PT. Regenesis Studio Indonesia</h2>
+              <div class="imake-subtitle">
+                R&D Engineer (Electrical & Electronics) · Advanced Wellness Technology (Novak Djokovic)
+              </div>
+            </div>
+          </div>
+          <div class="badge-accent" style="margin-bottom: 0;">Global R&D Engineering</div>
+        </div>
+
+        <div class="slide-8-layout">
+          
+          <!-- Left: 3D Video Player (27.mp4) & Key Specs -->
+          <div class="video-showcase-box">
+            <div class="video-player-wrapper">
+              <video src="images/27.mp4" autoplay loop muted playsinline controls preload="auto"></video>
+            </div>
+            
+            <div class="video-bottom-caption">
+              <span class="video-badge-pill">
+                <span class="brand-dot" style="width: 6px; height: 6px;"></span>
+                3D CAD & Render: POD Wellness Device
+              </span>
+              <span>1080p FHD Architecture</span>
+            </div>
+
+            <div class="slide-8-compact-stats">
+              <div class="stat-card" style="padding: 10px 14px;">
+                <div class="stat-number" style="font-size: 1.4rem;">EN55014</div>
+                <div class="stat-label" style="font-size: 0.72rem;">EMC Radiation Certified</div>
+              </div>
+              <div class="stat-card" style="padding: 10px 14px;">
+                <div class="stat-number" style="font-size: 1.4rem;">Novak</div>
+                <div class="stat-label" style="font-size: 0.72rem;">Djokovic Associated Tech</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Engineering Execution & Performance Metrics -->
+          <div class="imake-col-card" style="height: 100%;">
+            
+            <div class="imake-stats-bar" style="margin-bottom: 12px; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div class="stat-card" style="padding: 8px 12px;">
+                <div class="stat-number" style="font-size: 1.55rem;">80%</div>
+                <div class="stat-label" style="font-size: 0.72rem;">BOM Cost Reduction</div>
+              </div>
+              <div class="stat-card" style="padding: 8px 12px;">
+                <div class="stat-number" style="font-size: 1.55rem;">750%</div>
+                <div class="stat-label" style="font-size: 0.72rem;">Cable Output Surge</div>
+              </div>
+            </div>
+
+            <div class="col-title">
+              <span class="dot"></span>
+              <span>Advanced Engineering & Production Optimization</span>
+            </div>
+
+            <ul class="responsibilities-list">
+              <li>
+                <strong>EMC Radiated Emission Solved:</strong> Diagnosed and solved radiated emission failures during EN55014 compliance testing by redesigning power circuits, audio grounding, and shielding cabling.
+              </li>
+              <li>
+                <strong>Therapeutic Electronics Subsystems:</strong> Engineered multi-modal wellness subsystems: <strong>PEMF, stroboscopic light, infrared, vibration, aromatic, and binaural sound</strong>.
+              </li>
+              <li>
+                <strong>Electromechanical Control & Safety:</strong> Designed automated door operation with motor control, sensor feedback, and fail-safe safety release mechanisms.
+              </li>
+              <li>
+                <strong>POD v4 Design & Global Transfer:</strong> Defined electronics architecture integrating RS485 communication bus, and led tech transfer for international manufacturing partners.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 9: GLOBAL ACHIEVEMENT: FORMULA 1 QATAR GRAND PRIX
+         ======================================================== -->
+    <section class="slide" id="slide-9" data-index="9">
+      <div class="slide-9-container">
+        
+        <div class="f1-header">
+          <div class="f1-title-group">
+            <h2>Formula 1 Qatar Grand Prix Achievement</h2>
+            <div class="f1-sub">
+              International On-Site Deployment & VIP Wellness Engineering at Lusail International Circuit
+            </div>
+          </div>
+          <div class="badge-accent" style="margin-bottom: 0;">Global Motorsport & Wellness Stage</div>
+        </div>
+
+        <!-- 2 Main Spotlight Cards (Djokovic/Ferdinand & Adzani at F1) -->
+        <div class="f1-spotlight-grid">
+          
+          <!-- Card 1: Novak Djokovic & Rio Ferdinand -->
+          <div class="f1-spotlight-card" onclick="openLightbox('images/3.jpg')">
+            <div class="f1-spotlight-img">
+              <img src="images/3.jpg" alt="Novak Djokovic and Rio Ferdinand with Wellness Pod" onerror="if(this.src.indexOf('image/')===-1) this.src='image/3.jpg';">
+            </div>
+            <div class="f1-spotlight-caption">
+              <div class="f1-spotlight-title">
+                <span class="brand-dot" style="width: 7px; height: 7px;"></span>
+                <span>Novak Djokovic & Rio Ferdinand</span>
+              </div>
+              <div class="f1-spotlight-desc">
+                Qatar Airways Performance Center by Novak Djokovic at F1 Qatar, showcasing the engineered wellness POD.
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Adzani at Qatar Grand Prix -->
+          <div class="f1-spotlight-card" onclick="openLightbox('images/8.jpg')">
+            <div class="f1-spotlight-img">
+              <img src="images/8.jpg" alt="Muhammad Nur Hidayatullah Adzani at Qatar GP" onerror="if(this.src.indexOf('image/')===-1) this.src='image/8.jpg';" style="object-position: center 60%;">
+            </div>
+            <div class="f1-spotlight-caption">
+              <div class="f1-spotlight-title">
+                <span class="brand-dot" style="width: 7px; height: 7px;"></span>
+                <span>Muhammad Nur Hidayatullah Adzani</span>
+              </div>
+              <div class="f1-spotlight-desc">
+                On-site trackside operations and engineering commissioning at the FIA Formula 1 Qatar Airways Qatar Grand Prix.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Gallery Ribbon with all photos -->
+        <div class="gallery-ribbon-container">
+          <div class="gallery-ribbon-title">
+            <span>Engineering & Paddock Operations Gallery (Click to Enlarge)</span>
+            <span style="color: var(--accent-orange-bright); font-size: 0.75rem;">13 Official Photos</span>
+          </div>
+
+          <div class="gallery-thumbnails-strip">
+            <div class="thumb-item" onclick="openLightbox('images/3.jpg')" title="Novak Djokovic & Rio Ferdinand"><img src="images/3.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/8.jpg')" title="Adzani at F1 Qatar"><img src="images/8.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/4.jpg')" title="Qatar Performance Center"><img src="images/4.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/5.jpg')" title="Lusail Circuit Trackside"><img src="images/5.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/6.jpg')" title="Paddock Pitlane View"><img src="images/6.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/7.jpg')" title="VIP Hospitality Area"><img src="images/7.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/20.jpg')" title="Circuit Installation Setup"><img src="images/20.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/21.jpg')" title="Wellness Pod Operational"><img src="images/21.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/22.jpg')" title="VIP Performance Lounge"><img src="images/22.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/23.jpg')" title="Official F1 Accreditation"><img src="images/23.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/24.jpg')" title="Lusail Grandstand Evening"><img src="images/24.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/25.jpg')" title="On-Site Engineering Commissioning"><img src="images/25.jpg"></div>
+            <div class="thumb-item" onclick="openLightbox('images/26.jpg')" title="Technical Deployment Checklist"><img src="images/26.jpg"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 10: WHERE CAN AN EE GRADUATE GO? (Text Guide)
+         ======================================================== -->
+    <section class="slide" id="slide-10" data-index="10">
+      <div class="slide-10-container">
+        
+        <div class="slide-10-layout">
+          
+          <!-- Left Column: Core Argument & Takeaway Philosophy -->
+          <div class="career-left-column">
+            <div class="badge-accent" style="margin-bottom: 8px;">Career Horizons & Versatility</div>
+            
+            <h2 class="career-heading">
+              Where Can an <span style="color: var(--accent-orange-bright);">Electrical & Electronics</span> Engineering Graduate Go?
+            </h2>
+
+            <p class="career-intro-p">
+              In my personal opinion, <strong>Electrical and Electronics Engineering</strong> is one of the most versatile and future-proof fields, especially in today's rapidly evolving AI era.
+            </p>
+
+            <p class="career-intro-p" style="font-size: 0.88rem; color: #b8becd;">
+              <strong>Why?</strong> Because our skill set is incredibly niche and adaptable. We are not limited to working with electrical systems or electronic circuits. We can explore opportunities across hardware, software, and everything in between.
+            </p>
+
+            <p class="career-intro-p" style="font-size: 0.88rem; color: #b8becd;">
+              We can build physical products, develop intelligent systems, write software, integrate AI into real-world applications, and even bridge the gap between engineering and business.
+            </p>
+
+            <!-- Key Takeaway Quote -->
+            <div class="career-quote-box">
+              <div class="career-quote-title">The Core Principle</div>
+              <div class="career-quote-text">
+                "Don't limit yourself to the job title written on your degree. Your degree gives you the foundation, but your skills, curiosity, adaptability, and willingness to explore will determine how far you can go. Engineers who understand <strong>both the physical and digital worlds</strong> have an extraordinary opportunity to make a real impact."
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 10 Industries & Roles Grid -->
+          <div class="career-right-column">
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+              <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-orange-bright);">
+                Proven Industry & Career Opportunities
+              </span>
+              <span style="font-size: 0.74rem; color: var(--text-dim);">Based on Real Career Paths</span>
+            </div>
+
+            <div class="career-industries-grid">
+              
+              <!-- 1. Oil & Gas -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Oil & Gas Industry</span>
+                </div>
+                <div class="industry-card-roles">
+                  Electrical Engineer · Instrumentation Engineer · Field Service Engineer · Control Systems Engineer
+                </div>
+              </div>
+
+              <!-- 2. Mining -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Mining Industry</span>
+                </div>
+                <div class="industry-card-roles">
+                  Electrical Engineer · Automation Engineer · Maintenance Engineer · Mine Electrical Engineer
+                </div>
+              </div>
+
+              <!-- 3. Renewable Energy -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Renewable Energy</span>
+                </div>
+                <div class="industry-card-roles">
+                  Solar PV Engineer · Power Systems Engineer · Energy Engineer · Battery Systems Engineer
+                </div>
+              </div>
+
+              <!-- 4. SOEs / BUMN -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>State-Owned Enterprises (SOEs / BUMN)</span>
+                </div>
+                <div class="industry-card-roles">
+                  Energy · Telecommunications · Transportation · Critical Infrastructure · High-Tech Manufacturing
+                </div>
+              </div>
+
+              <!-- 5. EPC -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Engineering, Procurement & Construction (EPC)</span>
+                </div>
+                <div class="industry-card-roles">
+                  Electrical Design Engineer · Project Engineer · Commissioning Engineer · Project Manager
+                </div>
+              </div>
+
+              <!-- 6. Manufacturing -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Manufacturing Industry</span>
+                </div>
+                <div class="industry-card-roles">
+                  Manufacturing Engineer · Production Engineer · Process Engineer · Quality Engineer · R&D Engineer
+                </div>
+              </div>
+
+              <!-- 7. Software Engineering -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Software Engineering</span>
+                </div>
+                <div class="industry-card-roles">
+                  Embedded Software Engineer · Firmware Engineer · IoT Developer · Backend or Systems Engineer
+                </div>
+              </div>
+
+              <!-- 8. Artificial Intelligence -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Artificial Intelligence (AI)</span>
+                </div>
+                <div class="industry-card-roles">
+                  AI Engineer · Machine Learning Engineer · Edge AI Engineer · AIoT (AI + IoT) Engineer
+                </div>
+              </div>
+
+              <!-- 9. Robotics -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Robotics Engineering</span>
+                </div>
+                <div class="industry-card-roles">
+                  Robotics Engineer · Automation Engineer · Control Systems Engineer
+                </div>
+              </div>
+
+              <!-- 10. Mechatronics -->
+              <div class="industry-card">
+                <div class="industry-card-title">
+                  <span class="dot"></span>
+                  <span>Mechatronics Engineering</span>
+                </div>
+                <div class="industry-card-roles">
+                  Mechatronics Engineer · Systems Integration Engineer · Product Development Engineer
+                </div>
+              </div>
+
+              <!-- And that's not even the end of it -->
+              <div class="other-opportunities-card">
+                <strong>And that's not even the end of it:</strong> Telecommunications, aerospace, defense, automotive, medical devices, semiconductor industries, research & development, technical consulting, technical sales, and technology entrepreneurship.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox Modal for Gallery Enlargement -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-img-wrapper" id="lightboxWrapper">
+      <button class="lightbox-close" onclick="closeLightboxDirect()">&times;</button>
+      <img id="lightboxImg" src="" alt="Enlarged Gallery Image">
+    </div>
+  </div>
+
+  <!-- Deck Bottom Navigation Bar -->
+  <footer class="deck-footer">
+    
+    <div class="nav-hints">
+      <div class="kbd-hint">
+        <kbd>&larr;</kbd> <kbd>&rarr;</kbd>
+        <span>Navigate</span>
+      </div>
+      <div class="kbd-hint">
+        <kbd>Space</kbd>
+        <span>Next</span>
+      </div>
+      <div class="kbd-hint">
+        <kbd>F11</kbd> / <kbd>F</kbd>
+        <span>Fullscreen</span>
+      </div>
+      <div class="kbd-hint">
+        <kbd>Esc</kbd>
+        <span>Exit</span>
+      </div>
+    </div>
+
+    <!-- Slide Indicators (10 Slides) -->
+    <div class="deck-indicators" id="indicators">
+      <div class="indicator-pill active" onclick="goToSlide(1)" title="Slide 1: Hero"></div>
+      <div class="indicator-pill" onclick="goToSlide(2)" title="Slide 2: 2021 Crossroads"></div>
+      <div class="indicator-pill" onclick="goToSlide(3)" title="Slide 3: Transformation"></div>
+      <div class="indicator-pill" onclick="goToSlide(4)" title="Slide 4: Academics (Polinema)"></div>
+      <div class="indicator-pill" onclick="goToSlide(5)" title="Slide 5: iMake Official"></div>
+      <div class="indicator-pill" onclick="goToSlide(6)" title="Slide 6: PT Utama Marina"></div>
+      <div class="indicator-pill" onclick="goToSlide(7)" title="Slide 7: PT Kastara (CEO)"></div>
+      <div class="indicator-pill" onclick="goToSlide(8)" title="Slide 8: Recharge POD & Regenesis"></div>
+      <div class="indicator-pill" onclick="goToSlide(9)" title="Slide 9: Qatar F1 Achievement"></div>
+      <div class="indicator-pill" onclick="goToSlide(10)" title="Slide 10: Where Can EE Graduates Go?"></div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="footer-arrows">
+      <button class="btn-arrow-footer" id="prevBtn" title="Previous Slide (Left Arrow)">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="btn-arrow-footer" id="nextBtn" title="Next Slide (Right Arrow)">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+  </footer>
+
+  <script>
+    // State
+    const totalSlides = 10;
+    let currentSlide = 1;
+
+    // Elements
+    const slides = document.querySelectorAll('.slide');
+    const indicatorPills = document.querySelectorAll('.indicator-pill');
+    const slideNumberEl = document.getElementById('slideNumber');
+    const progressBar = document.getElementById('progressBar');
+    
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const sidePrevBtn = document.getElementById('sidePrevBtn');
+    const sideNextBtn = document.getElementById('sideNextBtn');
+
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const fsIconExpand = document.getElementById('fsIconExpand');
+    const fsIconCompress = document.getElementById('fsIconCompress');
+    const fsBtnLabel = document.getElementById('fsBtnLabel');
+
+    // Lightbox Elements
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightboxModal.classList.add('active');
+    }
+
+    function closeLightboxDirect() {
+      lightboxModal.classList.remove('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove('active');
+      }
+    }
+
+    // Update Slide View
+    function updateSlide() {
+      slides.forEach((slide, idx) => {
+        if (idx + 1 === currentSlide) {
+          slide.classList.add('active');
+          
+          // Auto-play video if on slide 8
+          if (idx + 1 === 8) {
+            const vid = slide.querySelector('video');
+            if (vid) {
+              vid.currentTime = 0;
+              vid.play().catch(e => console.log('Autoplay handled:', e));
+            }
+          }
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      indicatorPills.forEach((pill, idx) => {
+        if (idx + 1 === currentSlide) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+
+      // Update counter and progress
+      slideNumberEl.textContent = currentSlide < 10 ? '0' + currentSlide : currentSlide;
+      const progressPercent = (currentSlide / totalSlides) * 100;
+      progressBar.style.width = progressPercent + '%';
+
+      // Update button states
+      const isFirst = currentSlide === 1;
+      const isLast = currentSlide === totalSlides;
+      
+      prevBtn.disabled = isFirst;
+      nextBtn.disabled = isLast;
+      sidePrevBtn.disabled = isFirst;
+      sideNextBtn.disabled = isLast;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(slideIdx) {
+      if (slideIdx >= 1 && slideIdx <= totalSlides) {
+        currentSlide = slideIdx;
+        updateSlide();
+      }
+    }
+
+    // Enhanced Fullscreen Functionality (Native F11 / Web API / Fallback)
+    async function toggleFullscreen() {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+      
+      if (!isFs) {
+        const elem = document.documentElement;
+        try {
+          if (elem.requestFullscreen) {
+            await elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) {
+            await elem.webkitRequestFullscreen();
+          } else if (elem.mozRequestFullScreen) {
+            await elem.mozRequestFullScreen();
+          } else if (elem.msRequestFullscreen) {
+            await elem.msRequestFullscreen();
+          }
+          document.body.classList.add('is-fullscreen-mode');
+        } catch (err) {
+          console.warn("Native fullscreen request denied, activating pure full-window fallback mode:", err);
+          document.body.classList.toggle('fallback-fullscreen');
+          updateFullscreenIcons();
+        }
+      } else {
+        try {
+          if (document.exitFullscreen) {
+            await document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            await document.webkitExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            await document.mozCancelFullScreen();
+          } else if (document.msExitFullscreen) {
+            await document.msExitFullscreen();
+          }
+        } catch (err) {
+          console.warn(err);
+        }
+        document.body.classList.remove('is-fullscreen-mode');
+        document.body.classList.remove('fallback-fullscreen');
+        updateFullscreenIcons();
+      }
+    }
+
+    function updateFullscreenIcons() {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement || document.body.classList.contains('fallback-fullscreen') || document.body.classList.contains('is-fullscreen-mode'));
+      if (isFs) {
+        fsIconExpand.style.display = 'none';
+        fsIconCompress.style.display = 'block';
+        fsBtnLabel.textContent = 'Exit (Esc)';
+      } else {
+        fsIconExpand.style.display = 'block';
+        fsIconCompress.style.display = 'none';
+        fsBtnLabel.textContent = 'Fullscreen (F11)';
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        document.body.classList.remove('is-fullscreen-mode');
+      } else {
+        document.body.classList.add('is-fullscreen-mode');
+      }
+      updateFullscreenIcons();
+    });
+
+    document.addEventListener('webkitfullscreenchange', () => {
+      if (!document.webkitFullscreenElement) {
+        document.body.classList.remove('is-fullscreen-mode');
+      } else {
+        document.body.classList.add('is-fullscreen-mode');
+      }
+      updateFullscreenIcons();
+    });
+
+    // Event Listeners for Buttons
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    sidePrevBtn.addEventListener('click', prevSlide);
+    sideNextBtn.addEventListener('click', nextSlide);
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      // Close lightbox or exit fallback fullscreen with ESC
+      if (e.key === 'Escape') {
+        if (lightboxModal.classList.contains('active')) {
+          closeLightboxDirect();
+          return;
+        }
+        if (document.body.classList.contains('fallback-fullscreen')) {
+          document.body.classList.remove('fallback-fullscreen');
+          updateFullscreenIcons();
+          return;
+        }
+      }
+
+      // Keyboard navigation
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || (e.key === ' ' && e.target === document.body)) {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault();
+        toggleFullscreen();
+      } else if (e.key >= '1' && e.key <= '9') {
+        goToSlide(parseInt(e.key));
+      } else if (e.key === '0') {
+        goToSlide(10);
+      }
+    });
+
+    // Touch Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 40) {
+        if (swipeDistance < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }
+
+    // Initialize
+    updateSlide();
+  </script>
+</body>
+</html>
