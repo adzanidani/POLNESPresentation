@@ -2569,7 +2569,18 @@
           </div>
         </div>
 
-        <div class="imake-columns">
+        <div class="imake-columns" style="grid-template-columns: 240px 1.15fr 1fr;">
+          <!-- Left: Photo of MT. Bloom & Adzani (2.jpg) -->
+          <div class="imake-col-card" style="padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;" onclick="openLightbox('images/2.jpg')">
+            <div style="width: 100%; height: 230px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 107, 0, 0.4); box-shadow: 0 0 20px rgba(255, 107, 0, 0.25);">
+              <img src="images/2.jpg" alt="Muhammad Nur Hidayatullah Adzani - Marine Commissioning" onerror="if(this.src.indexOf('image/')===-1) this.src='image/2.jpg';" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
+            </div>
+            <div style="margin-top: 8px; font-size: 0.78rem; color: #b8becd; text-align: center; display: flex; align-items: center; gap: 6px;">
+              <span class="brand-dot" style="width: 6px; height: 6px;"></span>
+              <span>On-Site Marine Commissioning & Sea Trials</span>
+            </div>
+          </div>
+
           <div class="imake-col-card">
             <div class="col-title">
               <span class="dot"></span>
@@ -2680,22 +2691,27 @@
           </div>
 
           <div class="imake-col-card">
-            <div class="col-title">
+            <!-- Commodity Trading & Leadership Photo (12.jpg) -->
+            <div style="width: 100%; height: 135px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 107, 0, 0.4); box-shadow: 0 0 20px rgba(255, 107, 0, 0.2); margin-bottom: 10px; cursor: pointer;" onclick="openLightbox('images/12.jpg')">
+              <img src="images/12.jpg" alt="PT. Kastara Group Indonesia - Commodity Trade & Leadership" onerror="if(this.src.indexOf('image/')===-1) this.src='image/12.jpg';" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            </div>
+
+            <div class="col-title" style="margin-bottom: 8px;">
               <span class="dot"></span>
               <span>Commodity Scope & Commercial Value</span>
             </div>
-            <div class="capabilities-box">
-              <div class="cap-badge">
-                <strong>Agricultural Commodities:</strong> Exporting high-grade Indonesian agricultural products to competitive overseas markets.
+            <div class="capabilities-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div class="cap-badge" style="padding: 7px 10px; font-size: 0.78rem;">
+                <strong>Agro Trade:</strong> Exporting high-grade Indonesian commodities overseas.
               </div>
-              <div class="cap-badge">
-                <strong>Fisheries & Marine Commodities:</strong> Connecting premium maritime harvests with verified international seafood supply chains.
+              <div class="cap-badge" style="padding: 7px 10px; font-size: 0.78rem;">
+                <strong>Fisheries:</strong> Connecting premium maritime harvests with verified seafood chains.
               </div>
-              <div class="cap-badge">
-                <strong>Value-Added Processing:</strong> Enhancing quality grading, export packing standards, and international quarantine compliance.
+              <div class="cap-badge" style="padding: 7px 10px; font-size: 0.78rem;">
+                <strong>Value-Added:</strong> Quality grading, export packing & quarantine standards.
               </div>
-              <div class="cap-badge">
-                <strong>Commercial Impact:</strong> Creating fair-trade economic prosperity for domestic producers while securing steady foreign revenue streams.
+              <div class="cap-badge" style="padding: 7px 10px; font-size: 0.78rem;">
+                <strong>Economic Impact:</strong> Fair-trade value for local producers with steady foreign revenue.
               </div>
             </div>
           </div>
@@ -2722,7 +2738,7 @@
               </div>
             </div>
           </div>
-          <div class="badge-accent" style="margin-bottom: 0;">Global R&D Engineering</div>
+          <div class="badge-accent" style="margin-bottom: 0;">Product Development</div>
         </div>
 
         <div class="slide-8-layout">
@@ -2736,36 +2752,24 @@
             <div class="video-bottom-caption">
               <span class="video-badge-pill">
                 <span class="brand-dot" style="width: 6px; height: 6px;"></span>
-                3D CAD & Render: POD Wellness Device
+                3D CAD & Render: Regenesis POD V3
               </span>
-              <span>1080p FHD Architecture</span>
             </div>
 
             <div class="slide-8-compact-stats">
               <div class="stat-card" style="padding: 10px 14px;">
-                <div class="stat-number" style="font-size: 1.4rem;">EN55014</div>
-                <div class="stat-label" style="font-size: 0.72rem;">EMC Radiation Certified</div>
+                <div class="stat-number" style="font-size: 1.25rem;">POD V3</div>
+                <div class="stat-label" style="font-size: 0.72rem;">Regenesis System</div>
               </div>
               <div class="stat-card" style="padding: 10px 14px;">
-                <div class="stat-number" style="font-size: 1.4rem;">Novak</div>
-                <div class="stat-label" style="font-size: 0.72rem;">Djokovic Associated Tech</div>
+                <div class="stat-number" style="font-size: 1.25rem;">Novak Djokovic</div>
+                <div class="stat-label" style="font-size: 0.72rem;">Associated Wellness Tech</div>
               </div>
             </div>
           </div>
 
           <!-- Right: Engineering Execution & Performance Metrics -->
           <div class="imake-col-card" style="height: 100%;">
-            
-            <div class="imake-stats-bar" style="margin-bottom: 12px; grid-template-columns: 1fr 1fr; gap: 10px;">
-              <div class="stat-card" style="padding: 8px 12px;">
-                <div class="stat-number" style="font-size: 1.55rem;">80%</div>
-                <div class="stat-label" style="font-size: 0.72rem;">BOM Cost Reduction</div>
-              </div>
-              <div class="stat-card" style="padding: 8px 12px;">
-                <div class="stat-number" style="font-size: 1.55rem;">750%</div>
-                <div class="stat-label" style="font-size: 0.72rem;">Cable Output Surge</div>
-              </div>
-            </div>
 
             <div class="col-title">
               <span class="dot"></span>
@@ -2774,16 +2778,19 @@
 
             <ul class="responsibilities-list">
               <li>
-                <strong>EMC Radiated Emission Solved:</strong> Diagnosed and solved radiated emission failures during EN55014 compliance testing by redesigning power circuits, audio grounding, and shielding cabling.
+                <strong>Installation on Site & Commissioning:</strong> Led end-to-end on-site system deployment, electromechanical integration, wiring validation, and rigorous operational commissioning for VIP/commercial installations.
               </li>
               <li>
                 <strong>Therapeutic Electronics Subsystems:</strong> Engineered multi-modal wellness subsystems: <strong>PEMF, stroboscopic light, infrared, vibration, aromatic, and binaural sound</strong>.
               </li>
               <li>
+                <strong>EMC Compliance & Radiated Emission:</strong> Diagnosed and solved radiated emission challenges during certification by redesigning power routing, grounding, and shielded cabling.
+              </li>
+              <li>
                 <strong>Electromechanical Control & Safety:</strong> Designed automated door operation with motor control, sensor feedback, and fail-safe safety release mechanisms.
               </li>
               <li>
-                <strong>POD v4 Design & Global Transfer:</strong> Defined electronics architecture integrating RS485 communication bus, and led tech transfer for international manufacturing partners.
+                <strong>POD Architecture & Tech Transfer:</strong> Defined electronics architecture integrating RS485 communication bus, and led tech transfer for international manufacturing partners.
               </li>
             </ul>
           </div>
@@ -2806,7 +2813,7 @@
               International On-Site Deployment & VIP Wellness Engineering at Lusail International Circuit
             </div>
           </div>
-          <div class="badge-accent" style="margin-bottom: 0;">Global Motorsport & Wellness Stage</div>
+          <div class="badge-accent" style="margin-bottom: 0;">International Event and Exhibition</div>
         </div>
 
         <!-- 2 Main Spotlight Cards (Djokovic/Ferdinand & Adzani at F1) -->
@@ -2815,7 +2822,7 @@
           <!-- Card 1: Novak Djokovic & Rio Ferdinand -->
           <div class="f1-spotlight-card" onclick="openLightbox('images/3.jpg')">
             <div class="f1-spotlight-img">
-              <img src="images/3.jpg" alt="Novak Djokovic and Rio Ferdinand with Wellness Pod" onerror="if(this.src.indexOf('image/')===-1) this.src='image/3.jpg';">
+              <img src="images/3.jpg" alt="Novak Djokovic and Rio Ferdinand with Wellness Pod" onerror="if(this.src.indexOf('image/')===-1) this.src='image/3.jpg';" style="object-position: center 32%;">
             </div>
             <div class="f1-spotlight-caption">
               <div class="f1-spotlight-title">
